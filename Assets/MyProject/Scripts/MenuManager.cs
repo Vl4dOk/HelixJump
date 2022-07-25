@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _menu_Pause;
     [SerializeField] private GameObject _menu_VictoryScreen;
     [SerializeField] private GameObject _menu_DefeatScreen;
+    [SerializeField] private GameObject _menu_Shop;
     [SerializeField] private GameObject _menu_Settings;
 
     private void Update()
@@ -67,9 +68,13 @@ public class MenuManager : MonoBehaviour
     public void CallingMenu_DefeatScreen(){ _menu_DefeatScreen.SetActive(true); }
     public void CloseMenu_DefeatScreen(){   _menu_DefeatScreen.SetActive(false);}
 
+    public void CallingMenu_Shop() { _menu_Shop.SetActive(true); }
+    public void CloseMenu_Shop() { _menu_Shop.SetActive(false); }
 
     public void CallingMenu_Settings() { _menu_Settings.SetActive(true); }
     public void CloseMenu_Settings() { _menu_Settings.SetActive(false); }
+
+  
 
 
 
