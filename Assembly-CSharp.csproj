@@ -56,30 +56,22 @@
     <Analyzer Include="D:\Programs\IDE\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MyProject\Scripts\UIManager.cs" />
-    <Compile Include="Assets\Resourses\Levels\Scripts\Tier.cs" />
-    <Compile Include="Assets\Resourses\Levels\Segments\Segment5 (Холодный - Высота прыжка снижена)\Segment5.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Menu_Settings.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Shop\Menu_Shop_Skins.cs" />
-    <Compile Include="Assets\Resourses\Levels\Segments\Segment0(Finish)\Segment0.cs" />
-    <Compile Include="Assets\Resourses\Player\Camera\CameraController3.cs" />
-    <Compile Include="Assets\Resourses\Player\Camera\not involved CameraController1.cs" />
-    <Compile Include="Assets\Resourses\Levels\Segments\ScriptsGeneral\DissolutionSegments.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Shop\Menu_Shop.cs" />
-    <Compile Include="Assets\Resourses\Levels\Segments\Segment1 (Useally)\Segment1.cs" />
-    <Compile Include="Assets\MyProject\Scripts\GameManager.cs" />
-    <Compile Include="Assets\MyProject\Scripts\MenuManager.cs" />
-    <Compile Include="Assets\Resourses\Levels\Segments\Segment4 (Разрушается при прыжке)\Segment4.cs" />
-    <Compile Include="Assets\Resourses\Player\Camera\not involved CameraController2.cs" />
-    <Compile Include="Assets\Resourses\Levels\Segments\Segment2 (GameOver)\Segment2.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Levels.cs" />
-    <Compile Include="Assets\Resourses\Levels\Segments\ScriptsGeneral\SoundsSegments.cs" />
-    <Compile Include="Assets\MyProject\Scripts\LevelBiulder.cs" />
-    <Compile Include="Assets\Resourses\Player\CharacterCamera\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Resourses\Player\Charactor\Materials\ContentMaterials\MaterialX (Content1)\MaterialX.cs" />
-    <Compile Include="Assets\Resourses\Player\Player.cs" />
-    <Compile Include="Assets\Resourses\Player\Charactor\Scripts\Sphere.cs" />
-    <Compile Include="Assets\Resourses\Player\Charactor\Scripts\Character.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Character\CharacterSphere.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Character.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\LevelBuilder\Tier.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\Level.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Camera\CameraController.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\LevelBuilder\LevelBuilder.cs" />
+    <Compile Include="Assets\MyProject\Scripts\_Common\MenuManager.cs" />
+    <Compile Include="Assets\MyProject\Scripts\_Common\GameManager.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment0.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Camera\CameraPlayer.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Person.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Character\CharacterCube.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment1.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\Tiers\CylindersDestroy.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
