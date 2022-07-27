@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Player;
+using Players;
 
 public class Segment1 : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
-    private byte _speedCompensation = 0;
+    private sbyte _speedCompensation = 10;
 
 
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponent<CharacterCube>())
+        if (collision.collider.TryGetComponent(out Character Character))
         {
             Vector3 normal = -collision.contacts[0].normal.normalized;
             float dot = Vector3.Dot(normal, Vector3.up);
 
-            if (dot >= 0.5)
-            { collision.collider.gameObject.GetComponent<CharacterCube>().Jump(_speedCompensation); }
+            //if (dot >= 0.5)
+           // { Character.Jump(Character._jumpSpeed); }
         }
     }
 
@@ -27,7 +27,7 @@ public class Segment1 : MonoBehaviour
     private void OnTransformParentChanged()
     {
         _rigidbody.isKinematic = false;
-        _rigidbody.AddRelativeForce(new Vector3(0, 0, 7), ForceMode.Impulse);
+        _rigidbody.AddRelativeForce(new Vector3(0, Random.Range(0,5), Random.Range(7, 10)), ForceMode.Impulse);
         Destroy(gameObject, 2);
     }
 

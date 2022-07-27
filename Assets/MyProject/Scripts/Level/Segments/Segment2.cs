@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Player;
+using Players;
 
 public class Segment2 : MonoBehaviour
 {
@@ -14,8 +14,8 @@ public class Segment2 : MonoBehaviour
             Vector3 normal = -collision.contacts[0].normal.normalized;
             float dot = Vector3.Dot(normal, Vector3.up);
 
-            if (dot >= 0.5)
-            { Character.RecessiveDamage(1); }
+           // if (dot >= 0.5)
+           // { Character.RecessiveDamage(1); }
         }
     }
 

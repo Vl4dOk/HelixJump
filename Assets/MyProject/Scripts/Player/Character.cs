@@ -2,52 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
+namespace Players
 {
-    public abstract class Character : MonoBehaviour
+    public class Character : MonoBehaviour
     {
-        public GameObject _Character;
-        protected Rigidbody _rb_Character;
-        protected float _drag;
-        protected float _turnSpeed;
-        protected sbyte _jumpSpeed;
-        protected sbyte _health;
-        protected float _isJumpTime; //bool
+        private GameObject _character;
+        private GameObject _CharacterBody; //Collaider
+        private GameObject _CharacterSkin; //Matterial or other
+
+        private byte _numberCharacter;
+        private byte _numberCharacterSkin;
+        private byte _numberSkinMaterial;
+
+        //private int _health;
+        //private float _isJumpTime;
+        //public sbyte _jumpSpeed;
+        //private float _drag;
+        //public float SensitivityPlayer;
 
 
-       
 
-        protected void FixedUpdate()
+        public void Construct(GameObject character, byte characterNumber, byte numberCharacterSkin, byte numberSkinMaterial) 
         {
-            if (_isJumpTime > 0)
-            { _isJumpTime -= Time.deltaTime; }
+            _character = character;
+            _numberCharacter = characterNumber;
+            _numberCharacterSkin = numberCharacterSkin;
+            _numberSkinMaterial = numberSkinMaterial;
+
+            AddCharacterBody();
+            AddCharacterSkin();
         }
 
-        public abstract void Construct(Transform parent);
-
-
-        public void Jump(byte speedCompensation)
+        private void AddCharacterBody()
         {
-            if (_isJumpTime <= 0)
-            {
-                _rb_Character.AddForce(new Vector3(0, _jumpSpeed + speedCompensation, 0), ForceMode.Impulse);
-                _isJumpTime += 0.2f;
-            }
+            //_CharacterBody = new GameObject("CharacterBody");
+            _CharacterBody = _character;//
+
+
+            _CharacterBody.transform.parent = _character.transform;
+            _CharacterBody.AddComponent<CharacterBody>();
+            _CharacterBody.GetComponent<CharacterBody>().Construct(_CharacterBody, _numberCharacter);
         }
 
-
-        public void RecessiveDamage(sbyte damage)
+        private void AddCharacterSkin()
         {
-            _health -= damage;
+            //_CharacterSkin = new GameObject("CharacterSkin");
+            _CharacterSkin = _character;//
 
-            if (_health <= 0)
-            {   
-                _rb_Character.isKinematic = true;
-                GetComponentInParent<PlayerController>()._isControlPlayer = false;
-                MenuManager.MainMenuManager.CallingMenu_DefeatScreen();
-            }
+
+            _CharacterSkin.transform.parent = _character.transform;
+            _CharacterSkin.AddComponent<CharacterSkin>();
+            _CharacterSkin.GetComponent<CharacterSkin>().Construct(_CharacterSkin, _numberCharacterSkin, _numberSkinMaterial);
         }
 
 
     }
+
 }

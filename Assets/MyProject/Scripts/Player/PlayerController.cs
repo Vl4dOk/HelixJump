@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Player
+namespace Players
 {
     public class PlayerController : MonoBehaviour
     {
 
-        public float _sensitivity;
-        public bool _isControlPlayer = true;
+        [HideInInspector] public float _sensitivity;
+        [HideInInspector] public bool _isControlPlayer = true;
         private Vector3 _previousMousePosition;
 
       

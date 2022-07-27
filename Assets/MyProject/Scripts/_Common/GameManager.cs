@@ -2,27 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
+namespace Players
 {
     public class GameManager : MonoBehaviour
     {
-        
 
+        private GameObject _player;
         private GameObject _game;
-        private Level _level;
+        private GameObject _level;
         private byte _numberLevel = 1;
-        private byte _numberCharacter = 1;
+        private byte _numberCharacter = 1;//////<<<<\/
+        private byte _numberCharacterSkin = 1;//<<<</\
+        private byte _numberSkinMaterial = 1;
         private bool _isEndlessLevel = false;
 
 
-        private Person _player;
        // private byte _numberCharacter;
 
         public void StartGame()
         {
             AddGame();
             AddLevel();
-            AddPerson();
+            AddPlayer(new Vector3(0, 5, -3), _game.transform);
 
 
         }
@@ -30,24 +31,22 @@ namespace Player
         
         private void AddGame()
         {
-            _game = Instantiate(Resources.Load<GameObject>("_CommonPrefabs/EmptyObject"), new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0)) ;
-            _game.name = "Game";
+            _game = new GameObject("Game");
         }
         private void AddLevel()
-        {
-            GameObject gameObject = new GameObject();
-            gameObject.AddComponent<Level>();
-            _level = gameObject.GetComponent<Level>();
-            _level.Construct(_game.transform, _numberLevel, _isEndlessLevel);
-            Destroy(gameObject);
+        {           
+            _level = new GameObject("Level"); _level.transform.parent = _game.transform;
+            _level.AddComponent<Level>();
+            
         }
-        private void AddPerson()
+        private void AddPlayer(Vector3 position, Transform parent)
         {
-            GameObject gameObject = new GameObject();
-            gameObject.AddComponent<Person>();
-            _player = gameObject.GetComponent<Person>();
-            _player.Construct(_numberCharacter ,_game.transform);
-            Destroy(gameObject);
+            _player = new GameObject("Player"); _player.transform.position = position;  _player.transform.parent = parent;
+            
+            _player.AddComponent<PlayerController>();
+            _player.AddComponent<Player>();
+            _player.GetComponent<Player>().Construct(_player, _numberCharacter, _numberCharacterSkin, _numberSkinMaterial);
+
         }
 
         public void RestartGame()

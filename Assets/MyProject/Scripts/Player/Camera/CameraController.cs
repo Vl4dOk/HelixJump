@@ -1,32 +1,33 @@
 using UnityEngine;
 
-namespace Player
+namespace Players
 {
     public class CameraController : MonoBehaviour
     {
         public Transform _targetTransform;
-        private float heightDifference = 4;
-        private float speed;
+        private float _heightDifference;
+        private float _speed;
 
        
 
-        public void Construct(Transform target)
+        public void Construct(Transform target,float heightDifference = 4)
         {
             _targetTransform = target;
+            _heightDifference = heightDifference;
         }
 
 
         private void FixedUpdate()
         {
-            if (_targetTransform.position.y + heightDifference < gameObject.transform.position.y)
+            if (_targetTransform.position.y + _heightDifference < gameObject.transform.position.y)
             {
-                speed = (_targetTransform.position.y + heightDifference) - gameObject.transform.position.y;
+                _speed = (_targetTransform.position.y + _heightDifference) - gameObject.transform.position.y;
             }
 
-            if (_targetTransform.position.y + heightDifference < gameObject.transform.position.y)
+            if (_targetTransform.position.y + _heightDifference < gameObject.transform.position.y)
             {
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + speed, gameObject.transform.position.z);
-                speed += Time.deltaTime;
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + _speed, gameObject.transform.position.z);
+                _speed += Time.deltaTime;
             }
         }
     }

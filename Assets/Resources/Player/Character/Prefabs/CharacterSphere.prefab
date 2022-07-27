@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1708470875128487059}
   - component: {fileID: 8582012608907881706}
   - component: {fileID: 3010304224758573265}
-  - component: {fileID: -2732306077634222673}
   - component: {fileID: -4509242441815843577}
   - component: {fileID: -8009178951441135269}
+  - component: {fileID: 5427364642107858216}
   m_Layer: 7
   m_Name: CharacterSphere
   m_TagString: Untagged
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-2732306077634222673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5896464959865420215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7785cace2783ab44f87b40cd69208edd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _character: {fileID: 0}
 --- !u!135 &-4509242441815843577
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &5427364642107858216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896464959865420215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09128b941fdd4804e98d2a39686ecb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Character: {fileID: 0}
+  SensitivityPlayer: 0
