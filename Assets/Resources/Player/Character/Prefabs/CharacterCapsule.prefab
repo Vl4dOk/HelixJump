@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 6558181869507788388}
   - component: {fileID: 6558181869507788391}
   - component: {fileID: 6558181869507788390}
-  - component: {fileID: 3039112324719550321}
-  m_Layer: 0
+  - component: {fileID: 8004973264193401067}
+  - component: {fileID: 3076448252756966790}
+  - component: {fileID: 146353517336077850}
+  m_Layer: 7
   m_Name: CharacterCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,8 +65,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 26e97d737a2de04489ab70e84c7206de, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,7 +117,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
---- !u!114 &3039112324719550321
+--- !u!114 &8004973264193401067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,8 +126,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 6558181869507788385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b1fbfb3bbf1904b813be589d962b10, type: 3}
+  m_Script: {fileID: 11500000, guid: 09128b941fdd4804e98d2a39686ecb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO_character: {fileID: 0}
-  _speedJump: 0
+  _CharacterSkins:
+  - {fileID: 2100000, guid: 26e97d737a2de04489ab70e84c7206de, type: 2}
+  - {fileID: 2100000, guid: cdb120652f240f54b9692eea378d1cec, type: 2}
+  - {fileID: 2100000, guid: edd69f20bb7ceb143bbee26022550e46, type: 2}
+  - {fileID: 2100000, guid: e90ce16e60a324d4aba15ab36a3134c7, type: 2}
+  - {fileID: 2100000, guid: 6b18b7079e286d348aefe0a9919e629c, type: 2}
+  - {fileID: 2100000, guid: 39f8fe9978e7145439d663dd4f9b03e5, type: 2}
+  - {fileID: 2100000, guid: 2f2504a9e1a5901479c969a3b58d9c7e, type: 2}
+  - {fileID: 2100000, guid: b5ff6ea6ba7e18444aa82e4a4f7c386c, type: 2}
+--- !u!114 &3076448252756966790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558181869507788385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65f5b754fbbd1043bfcb1fa22bd5ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6558181869507788390}
+  _jumpSpeed: 13
+  health: 2
+--- !u!114 &146353517336077850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558181869507788385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e6d0601a8e65e4382c5c3543cac9c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sensitivity: 0.75
+  _isControlPlayer: 1

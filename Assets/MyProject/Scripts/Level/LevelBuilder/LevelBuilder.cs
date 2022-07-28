@@ -46,7 +46,8 @@ public class LevelBuilder : MonoBehaviour
     {
         AddStartTier();
         _tierPrefabs = Resources.LoadAll<GameObject>("Levels/LevelsPrefab/Level" + _numberLevel);
-        AddTier(); AddTier(); AddTier();
+        for (int i = 0; i < 4; i++)
+        { AddTier(); }
     }
 
 

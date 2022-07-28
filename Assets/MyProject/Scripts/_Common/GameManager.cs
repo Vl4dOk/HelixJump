@@ -16,9 +16,8 @@ namespace Players
         private bool _isEndlessLevel = false;
 
 
-        private byte _numberCharacter = 1;//////<<<<\/
-        private byte _numberCharacterSkin = 1;//<<<</\
-        private byte _numberSkinMaterial = 1;
+        private byte _numberCharacter = 1;
+        private byte _numberCharacterSkin = 1;
 
 
 
@@ -35,7 +34,7 @@ namespace Players
         {
             AddGame();
             AddLevel();
-            AddPlayer(new Vector3(0, 0, 0), new Vector3(0, 5, -3), _game.transform);
+            AddPlayer(new Vector3(0, 5, -3), _game.transform);
         }
 
         
@@ -50,13 +49,12 @@ namespace Players
             _level.GetComponent<Level>().Construct(_level,_level.transform, _numberLevel, _isEndlessLevel);
         }
 
-        private void AddPlayer(Vector3 playerPosition, Vector3 characterPocition, Transform parent)
+        private void AddPlayer(Vector3 characterPocition, Transform parent)
         {
-            _player = new GameObject("Player"); _player.transform.position = playerPosition;  _player.transform.parent = parent;
-            
-            _player.AddComponent<PlayerController>();
+            _player = new GameObject("Player"); _player.transform.parent = parent;
+                       
             _player.AddComponent<Player>();
-            _player.GetComponent<Player>().Construct(_player, characterPocition, _numberCharacter, _numberCharacterSkin, _numberSkinMaterial);
+            _player.GetComponent<Player>().Construct(_player, characterPocition, _numberCharacter, _numberCharacterSkin);
 
         }
 

@@ -24,30 +24,31 @@ namespace Players
         private byte _numberCharacterSkin;
         private byte _numberSkinMaterial;
 
-        public void Construct(GameObject player,Vector3 characterPocition, byte numberCharacter, byte numberCharacterSkin, byte numberSkinMaterial)
+        public void Construct(GameObject player, Vector3 characterPocition, byte numberCharacter, byte numberCharacterSkin)
         {
             _player = player;
             _numberCharacter = numberCharacter;
             _characterPocition = characterPocition;
             _numberCharacterSkin = numberCharacterSkin;
-            _numberSkinMaterial = numberSkinMaterial;
+
 
             AddCharacter(_numberCharacter, _numberCharacterSkin, _numberSkinMaterial, _player.transform);
-            AddCamera(_character.transform, _player.transform);
+            AddCamera(_character, _player.transform);
         }
 
         private void AddCharacter(byte numberCharacter, byte numberCharacterSkin, byte numberSkinMaterial , Transform parent)
         {
-            _character = new GameObject("Character");//
-           // _character = _player;
 
+            _character = numberCharacter == 0 ?  Instantiate(Resources.Load<GameObject>("Player/Character/Prefabs/CharacterSphere"), _player.transform) :
+                         numberCharacter == 1 ?  Instantiate(Resources.Load<GameObject>("Player/Character/Prefabs/CharacterCube"), _player.transform) :
+                         numberCharacter == 2 ?  Instantiate(Resources.Load<GameObject>("Player/Character/Prefabs/CharacterCylinder"), _player.transform) :
+                      /* numberCharacter == 3 */ Instantiate(Resources.Load<GameObject>("Player/Character/Prefabs/CharacterCapsule"), _player.transform);
             _character.transform.position = _characterPocition;
-            _character.transform.parent = parent;
-            _character.AddComponent<Character>();
-            _character.GetComponent<Character>().Construct(_character, _numberCharacter, _numberCharacterSkin, _numberSkinMaterial);
+            _character.GetComponent<Character>().Construct(_character, _numberCharacter, _numberCharacterSkin);
+           
         }
 
-        private void AddCamera(Transform target, Transform parent)
+        private void AddCamera(GameObject target, Transform parent)
         {
             //_camera = new GameObject("Camers");
             _camera = Instantiate(Resources.Load<GameObject>("Player/CharacterCamera/Prefabs/Camera"), _character.transform.position, Quaternion.Euler(new Vector3(40,0,0)), parent);
@@ -56,5 +57,7 @@ namespace Players
             _camera.AddComponent<CameraController>();
             _camera.GetComponent<CameraController>().Construct(target);
         }
+
+
     }
 }

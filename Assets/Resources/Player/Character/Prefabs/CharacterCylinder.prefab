@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 4758347214780595954}
   - component: {fileID: 9040380413428902302}
   - component: {fileID: 147429919399225574}
-  - component: {fileID: 6140973941608961187}
-  m_Layer: 0
+  - component: {fileID: -307195047832110513}
+  - component: {fileID: -6210075073678245664}
+  - component: {fileID: 6845178167203983338}
+  m_Layer: 7
   m_Name: CharacterCylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,8 +65,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 26e97d737a2de04489ab70e84c7206de, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
---- !u!114 &6140973941608961187
+--- !u!114 &-307195047832110513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +125,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 7657470476439551690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b1fbfb3bbf1904b813be589d962b10, type: 3}
+  m_Script: {fileID: 11500000, guid: 09128b941fdd4804e98d2a39686ecb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO_character: {fileID: 0}
-  _speedJump: 0
+  _CharacterSkins:
+  - {fileID: 2100000, guid: 26e97d737a2de04489ab70e84c7206de, type: 2}
+  - {fileID: 2100000, guid: cdb120652f240f54b9692eea378d1cec, type: 2}
+  - {fileID: 2100000, guid: edd69f20bb7ceb143bbee26022550e46, type: 2}
+  - {fileID: 2100000, guid: e90ce16e60a324d4aba15ab36a3134c7, type: 2}
+  - {fileID: 2100000, guid: 6b18b7079e286d348aefe0a9919e629c, type: 2}
+  - {fileID: 2100000, guid: 39f8fe9978e7145439d663dd4f9b03e5, type: 2}
+  - {fileID: 2100000, guid: 2f2504a9e1a5901479c969a3b58d9c7e, type: 2}
+  - {fileID: 2100000, guid: b5ff6ea6ba7e18444aa82e4a4f7c386c, type: 2}
+--- !u!114 &-6210075073678245664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7657470476439551690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65f5b754fbbd1043bfcb1fa22bd5ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 147429919399225574}
+  _jumpSpeed: 20
+  health: 1
+--- !u!114 &6845178167203983338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7657470476439551690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e6d0601a8e65e4382c5c3543cac9c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sensitivity: 0.75
+  _isControlPlayer: 1

@@ -56,22 +56,21 @@
     <Analyzer Include="D:\Programs\IDE\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MyProject\Scripts\Player\Character.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Character\Character.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\LevelBuilder\Tier.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Level.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\Camera\CameraController.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\LevelBuilder\LevelBuilder.cs" />
     <Compile Include="Assets\MyProject\Scripts\_Common\MenuManager.cs" />
     <Compile Include="Assets\MyProject\Scripts\_Common\GameManager.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Player\Character\CharacterBody.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment1.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Tiers\CylindersDestroy.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment0.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\Camera\CameraPlayer.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Player\Character\CharacterSkin.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment2.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Player\Character\CharacterCharacteristics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
