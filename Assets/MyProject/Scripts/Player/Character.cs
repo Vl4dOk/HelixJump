@@ -10,6 +10,8 @@ namespace Players
         private GameObject _CharacterBody; //Collaider
         private GameObject _CharacterSkin; //Matterial or other
 
+
+
         private byte _numberCharacter;
         private byte _numberCharacterSkin;
         private byte _numberSkinMaterial;
@@ -29,8 +31,9 @@ namespace Players
             _numberCharacterSkin = numberCharacterSkin;
             _numberSkinMaterial = numberSkinMaterial;
 
-            AddCharacterBody();
+            //AddCharacterBody();
             AddCharacterSkin();
+            AddPhysics();
         }
 
         private void AddCharacterBody()
@@ -54,6 +57,30 @@ namespace Players
             _CharacterSkin.AddComponent<CharacterSkin>();
             _CharacterSkin.GetComponent<CharacterSkin>().Construct(_CharacterSkin, _numberCharacterSkin, _numberSkinMaterial);
         }
+
+        private void AddPhysics()
+        {
+            Rigidbody rb;
+            _character.AddComponent<Rigidbody>();
+            rb = _character.GetComponent<Rigidbody>();
+            rb.drag = _numberCharacter == 0 ? 0.5f : _numberCharacter == 1 ? 5 : _numberCharacter == 2 ? 1 : 0.5f;
+         
+            rb.constraints = RigidbodyConstraints.FreezeRotation  | 
+                             RigidbodyConstraints.FreezePositionX |
+                             RigidbodyConstraints.FreezePositionZ;
+
+           
+            _character.AddComponent<MeshCollider>();
+            _character.GetComponent<MeshCollider>().convex = true;
+
+
+
+            _character.layer = 7;
+
+        }
+
+
+
 
 
     }

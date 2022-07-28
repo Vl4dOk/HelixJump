@@ -6,15 +6,27 @@ namespace Players
 {
     public class GameManager : MonoBehaviour
     {
-
-        private GameObject _player;
+        
         private GameObject _game;
+        private GameObject _player;        
         private GameObject _level;
+
+
         private byte _numberLevel = 1;
+        private bool _isEndlessLevel = false;
+
+
         private byte _numberCharacter = 1;//////<<<<\/
         private byte _numberCharacterSkin = 1;//<<<</\
         private byte _numberSkinMaterial = 1;
-        private bool _isEndlessLevel = false;
+
+
+
+
+
+
+
+        
 
 
        // private byte _numberCharacter;
@@ -23,9 +35,7 @@ namespace Players
         {
             AddGame();
             AddLevel();
-            AddPlayer(new Vector3(0, 5, -3), _game.transform);
-
-
+            AddPlayer(new Vector3(0, 0, 0), new Vector3(0, 5, -3), _game.transform);
         }
 
         
@@ -37,15 +47,16 @@ namespace Players
         {           
             _level = new GameObject("Level"); _level.transform.parent = _game.transform;
             _level.AddComponent<Level>();
-            
+            _level.GetComponent<Level>().Construct(_level,_level.transform, _numberLevel, _isEndlessLevel);
         }
-        private void AddPlayer(Vector3 position, Transform parent)
+
+        private void AddPlayer(Vector3 playerPosition, Vector3 characterPocition, Transform parent)
         {
-            _player = new GameObject("Player"); _player.transform.position = position;  _player.transform.parent = parent;
+            _player = new GameObject("Player"); _player.transform.position = playerPosition;  _player.transform.parent = parent;
             
             _player.AddComponent<PlayerController>();
             _player.AddComponent<Player>();
-            _player.GetComponent<Player>().Construct(_player, _numberCharacter, _numberCharacterSkin, _numberSkinMaterial);
+            _player.GetComponent<Player>().Construct(_player, characterPocition, _numberCharacter, _numberCharacterSkin, _numberSkinMaterial);
 
         }
 

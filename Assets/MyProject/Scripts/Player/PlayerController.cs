@@ -8,7 +8,7 @@ namespace Players
     public class PlayerController : MonoBehaviour
     {
 
-        [HideInInspector] public float _sensitivity;
+        [HideInInspector] public float _sensitivity = 0.1f;
         [HideInInspector] public bool _isControlPlayer = true;
         private Vector3 _previousMousePosition;
 
@@ -51,7 +51,9 @@ namespace Players
         }
 
         public void Sensitivity()
-        { }
+        { 
+        
+        }
 
     }
 }

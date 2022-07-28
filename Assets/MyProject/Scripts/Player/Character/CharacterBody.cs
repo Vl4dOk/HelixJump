@@ -16,13 +16,13 @@ public class CharacterBody : MonoBehaviour
 
 
         AddCharacterBody(_characterNumber);
+        
     }
 
-    private void AddCharacterBody(byte numberCharacterSkin)
+    private void AddCharacterBody(byte numberCharacter)
     {
         _characterBody = Instantiate(Resources.Load<GameObject>("Player/Character/Body/Body" + _characterNumber), _characterBody.transform);
     }
-
 
 
 }
