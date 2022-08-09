@@ -52,7 +52,7 @@ namespace Players
         {
             //_camera = new GameObject("Camers");
             _camera = Instantiate(Resources.Load<GameObject>("Player/CharacterCamera/Prefabs/Camera"), _character.transform.position, Quaternion.Euler(new Vector3(40,0,0)), parent);
-            _camera.transform.position = new Vector3(_character.transform.position.x, _character.transform.position.y + 5, _character.transform.position.z-9);
+            _camera.transform.position = new Vector3(_character.transform.position.x, _character.transform.position.y + 5, _character.transform.position.z-6);
            
             _camera.AddComponent<CameraController>();
             _camera.GetComponent<CameraController>().Construct(target);

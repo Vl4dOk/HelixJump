@@ -8,7 +8,7 @@ namespace Players
     {
         [SerializeField] Rigidbody rb;
 
-        [SerializeField] private byte _jumpSpeed;
+        [SerializeField] private int _jumpSpeed;
         [SerializeField] private sbyte health;
 
         private bool _isJump;
@@ -16,11 +16,11 @@ namespace Players
 
 
 
-        public void Jump()
+        public void Jump(int modSpeed = 1)
         {
             if (!_isJump)
             {
-                rb.AddForce(new Vector3(0, _jumpSpeed, 0), ForceMode.Impulse);
+                rb.AddForce(new Vector3(0, _jumpSpeed * modSpeed, 0), ForceMode.Impulse);
                 _isJump = true;
             }
         }
@@ -29,10 +29,11 @@ namespace Players
         {
             health -= Damage;
             if (health <= 0)
-            {
-                GetComponent<PlayerController>()._isControlPlayer = false;
+            {               
+                GetComponent<MyCharacterController>()._isControlPlayer = false;
                 rb.isKinematic = true;
                 MenuManager.MainMenuManager.CallingMenu_DefeatScreen();
+                GetComponent<ShaderGraphContent1>()._isActive = true;
             }
 
         }

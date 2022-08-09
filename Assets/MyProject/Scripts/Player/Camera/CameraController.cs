@@ -17,8 +17,8 @@ namespace Players
         {
             _targetTransform = target.transform;
             _heightDifference = heightDifference;
-            this._sensitivity = target.GetComponent<PlayerController>()._sensitivity;
-            this._point = target.GetComponent<PlayerController>()._point;
+            this._sensitivity = target.GetComponent<MyCharacterController>()._sensitivity;
+            this._point = target.GetComponent<MyCharacterController>()._point;
         }
 
         private void Update()

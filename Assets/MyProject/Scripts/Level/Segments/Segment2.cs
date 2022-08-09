@@ -6,7 +6,23 @@ using Players;
 public class Segment2 : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private sbyte _damage = 1;
+
+
+
+
+
+    private void Start()
+    {
+        if (_rigidbody == null)
+        { _rigidbody = GetComponent<Rigidbody>(); }
+        if (_audioSource == null)
+        { _audioSource = GetComponent<AudioSource>(); }
+    }
+
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,7 +32,10 @@ public class Segment2 : MonoBehaviour
             float dot = Vector3.Dot(normal, Vector3.up);
 
             if (dot >= 0.5)
-            { Character.TakingDamage(_damage); }
+            { Character.TakingDamage(_damage);
+              Character.Jump();
+              _audioSource.Play();
+            }
         }
     }
 

@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-       // MenuPause();
+       MenuPause();
     }
 
 
@@ -51,35 +51,44 @@ public class MenuManager : MonoBehaviour
 
     /////////////////////////////////////////////////// Pause menu ////////////////////////////////////////
 
-    //public void CallingMenu_Pause()
-    //{
-    //    _isMenu_PauseIncluded = true;
-    //    _menu_Pause.SetActive(true);
-    //    Time.timeScale = 0f;
-    //}
-    //public void CloseMenu_Pause()
-    //{
-    //    _isMenu_PauseIncluded = false;
-    //    _menu_Pause.SetActive(false);
-    //    Time.timeScale = 1f;
-    //}
+    public void CallingMenu_Pause()
+    {
+        _isMenu_PauseIncluded = true;
+        _menu_Pause.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void CloseMenu_Pause()
+    {
+        _isMenu_PauseIncluded = false;
+        _menu_Pause.SetActive(false);
+        Time.timeScale = 1f;
+    }
 
-    //[HideInInspector] public bool _isMenu_PauseIncluded = false;
-    //private void MenuPause()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Escape) && GameManager.MainGameManeger.IsTheGameRunning == true)
-    //    {
-    //        if (_isMenu_PauseIncluded)
-    //        { CloseMenu_Pause(); }
-    //        else
-    //        { CallingMenu_Pause(); }
-    //    }
-    //}
+    [HideInInspector] public bool _isMenu_PauseIncluded = false;
+    private void MenuPause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (_isMenu_PauseIncluded)
+            { CloseMenu_Pause(); }
+            else
+            { CallingMenu_Pause(); }
+        }
+    }
 
 
 
 
     //////////////////////////////////////////////////// Shop menu ////////////////////////////////////////
+
+
+
+
+
+
+
+
+
 
 
 

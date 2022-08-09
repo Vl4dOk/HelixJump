@@ -6,7 +6,16 @@ using Players;
 public class Segment1 : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
-    private sbyte _speedCompensation = 10;
+    [SerializeField] private AudioSource _audioSource;
+
+    private void Start()
+    {
+        if (_rigidbody == null)
+        { _rigidbody = GetComponent<Rigidbody>(); }
+        if (_audioSource == null)
+        { _audioSource = GetComponent<AudioSource>(); }
+    }
+
 
 
 
@@ -19,7 +28,7 @@ public class Segment1 : MonoBehaviour
             float dot = Vector3.Dot(normal, Vector3.up);
 
             if (dot >= 0.5)
-            { Character.Jump(); }
+            { Character.Jump(); _audioSource.Play();}
         }
     }
 

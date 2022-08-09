@@ -5,13 +5,20 @@ using Players;
 
 public class Segment0 : MonoBehaviour
 {
-    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private AudioSource _audioSource;
 
+    private void Start()
+    {
+        if (_audioSource == null)
+        { _audioSource = GetComponent<AudioSource>(); }
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.TryGetComponent(out Character character))
         {
             MenuManager.MainMenuManager.CallingMenu_VictoryScreen();
+            _audioSource.Play();
         }
     }
 

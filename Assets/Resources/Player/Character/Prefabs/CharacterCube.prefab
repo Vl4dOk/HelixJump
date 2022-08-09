@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -5343700763924309915}
   - component: {fileID: 2117997027898465383}
   - component: {fileID: -7439929184501428961}
+  - component: {fileID: -6273231386734024110}
   m_Layer: 7
   m_Name: CharacterCube
   m_TagString: Untagged
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CharacterSkins:
   - {fileID: 2100000, guid: 26e97d737a2de04489ab70e84c7206de, type: 2}
-  - {fileID: 2100000, guid: cdb120652f240f54b9692eea378d1cec, type: 2}
+  - {fileID: 2100000, guid: cecb5e5245fde694583cfe4821a06208, type: 2}
   - {fileID: 2100000, guid: edd69f20bb7ceb143bbee26022550e46, type: 2}
   - {fileID: 2100000, guid: e90ce16e60a324d4aba15ab36a3134c7, type: 2}
   - {fileID: 2100000, guid: 6b18b7079e286d348aefe0a9919e629c, type: 2}
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8735922853181876327}
-  _jumpSpeed: 25
+  _jumpSpeed: 27
   health: 1
 --- !u!114 &-7439929184501428961
 MonoBehaviour:
@@ -164,5 +165,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e6d0601a8e65e4382c5c3543cac9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensitivity: 0.5
+  _sensitivity: 1.3
   _isControlPlayer: 1
+  _point: {x: 0, y: 0, z: 0}
+--- !u!114 &-6273231386734024110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084041909168466490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585f8ce1e7c027b4187513de08d7ec70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dissolveMaterial: {fileID: 0}
+  _dissolveSpeed: 0
+  _isActive: 0

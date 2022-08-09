@@ -7,7 +7,7 @@ namespace Players
     public class Character : MonoBehaviour
     {
         private GameObject _character;
-        private PlayerController _playerController;
+        private MyCharacterController _playerController;
         [SerializeField] private Material[] _CharacterSkins; //Matterial
 
 
@@ -34,13 +34,12 @@ namespace Players
 
         private void AddCharacterSkin()
         {
-            _character.GetComponent<MeshRenderer>().material = _CharacterSkins[_numberCharacterSkin];
-            //_character.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Player/Character/Materials/Content" + _numberCharacterSkin);
+            GetComponent<MeshRenderer>().material = _CharacterSkins[_numberCharacterSkin];
         }
 
         private void AddCharacterController()
         {
-            _playerController = _character.GetComponent<PlayerController>();
+            _playerController = _character.GetComponent<MyCharacterController>();
 
         }
 

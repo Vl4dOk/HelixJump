@@ -564,6 +564,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &37213871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,8 +1182,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 136308077}
+        m_TargetAssemblyTypeName: Players.GameManager, Assembly-CSharp
         m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
@@ -1182,7 +1194,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1832717837}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: CloseMenu_VictoryScreen
         m_Mode: 1
@@ -1683,6 +1695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 136308076}
   - component: {fileID: 136308077}
+  - component: {fileID: 136308078}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1715,6 +1728,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a481fa04f28a1444480ba9d716720269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberLevel: 3
+  _isEndlessLevel: 0
+  _numberCharacter: 1
+  _numberCharacterSkin: 6
+--- !u!114 &136308078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136308074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83064bc6f60fb04e85c8cbc40fea7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &145791199
@@ -6748,7 +6777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1832717837}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: CloseMenu_Pause
         m_Mode: 1
@@ -8932,6 +8961,7 @@ GameObject:
   - component: {fileID: 959108755}
   - component: {fileID: 959108757}
   - component: {fileID: 959108756}
+  - component: {fileID: 959108758}
   m_Layer: 0
   m_Name: Menu_Shop_Skins
   m_TagString: Untagged
@@ -8998,6 +9028,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959108754}
   m_CullTransparentMesh: 1
+--- !u!114 &959108758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959108754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76bd2a5c7adf1434ca0e97397fa2f86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinButtonBuy: []
+  _isToggleActive:
+  - {fileID: 1868575218}
+  - {fileID: 557085171}
 --- !u!1 &969304740
 GameObject:
   m_ObjectHideFlags: 0
@@ -9945,6 +9991,7 @@ GameObject:
   - component: {fileID: 1113305371}
   - component: {fileID: 1113305373}
   - component: {fileID: 1113305372}
+  - component: {fileID: 1113305374}
   m_Layer: 0
   m_Name: Interface_Payer
   m_TagString: Untagged
@@ -10016,6 +10063,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113305370}
   m_CullTransparentMesh: 1
+--- !u!114 &1113305374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113305370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54638132d8ceaf448e5585a18b43018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interface_Payer: {fileID: 1113305370}
+  _currentLevel: {fileID: 1040445160}
+  _nextLevel: {fileID: 1211171281}
+  _sliderProgress: {fileID: 1281219983}
+  _currentTier: {fileID: 1525432623}
+  _recordTier: {fileID: 709200875}
+  _scoreCoins: {fileID: 1366292924}
 --- !u!1 &1114718083
 GameObject:
   m_ObjectHideFlags: 0
@@ -11510,8 +11576,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4254375, y: 0.14074071}
   m_AnchorMax: {x: 0.574771, y: 0.22055557}
-  m_AnchoredPosition: {x: 0, y: -1.5}
-  m_SizeDelta: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1240778777
 MonoBehaviour:
@@ -11581,9 +11647,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1832717835}
+      - m_Target: {fileID: 1832717837}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CloseMenu_Pause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12777,7 +12843,7 @@ GameObject:
   - component: {fileID: 1366292923}
   - component: {fileID: 1366292924}
   m_Layer: 0
-  m_Name: Text (Score)
+  m_Name: Text (Coins)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12844,7 +12910,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money:'
+  m_Text: 'Coins:'
 --- !u!1 &1369795159
 GameObject:
   m_ObjectHideFlags: 0
@@ -15230,9 +15296,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1832717835}
+      - m_Target: {fileID: 1832717837}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CloseMenu_Pause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15364,8 +15430,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 136308077}
+        m_TargetAssemblyTypeName: Players.GameManager, Assembly-CSharp
         m_MethodName: FinishGame
         m_Mode: 1
         m_Arguments:
@@ -15376,9 +15442,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1832717837}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: CloseMenu_DefeatScreen
+        m_MethodName: CallingMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15388,9 +15454,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1832717837}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: CallingMainMenu
+        m_MethodName: CloseMenu_DefeatScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16744,6 +16810,7 @@ MonoBehaviour:
   _menu_DefeatScreen: {fileID: 1944757017}
   _menu_Shop: {fileID: 1046684738}
   _menu_Settings: {fileID: 874373757}
+  _isMenu_PauseIncluded: 0
 --- !u!1 &1853940585
 GameObject:
   m_ObjectHideFlags: 0
@@ -17660,7 +17727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
