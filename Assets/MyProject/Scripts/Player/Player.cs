@@ -20,11 +20,11 @@ namespace Players
         private Vector3 _characterPocition;
         private GameObject _camera;
 
-        private byte _numberCharacter;
-        private byte _numberCharacterSkin;
-        private byte _numberSkinMaterial;
+        private int _numberCharacter;
+        private int _numberCharacterSkin;
 
-        public void Construct(GameObject player, Vector3 characterPocition, byte numberCharacter, byte numberCharacterSkin)
+
+        public void Construct(GameObject player, Vector3 characterPocition, int numberCharacter, int numberCharacterSkin)
         {
             _player = player;
             _numberCharacter = numberCharacter;
@@ -32,11 +32,11 @@ namespace Players
             _numberCharacterSkin = numberCharacterSkin;
 
 
-            AddCharacter(_numberCharacter, _numberCharacterSkin, _numberSkinMaterial, _player.transform);
+            AddCharacter(_numberCharacter, _numberCharacterSkin, _player.transform);
             AddCamera(_character, _player.transform);
         }
 
-        private void AddCharacter(byte numberCharacter, byte numberCharacterSkin, byte numberSkinMaterial , Transform parent)
+        private void AddCharacter(int numberCharacter, int numberCharacterSkin , Transform parent)
         {
 
             _character = numberCharacter == 0 ?  Instantiate(Resources.Load<GameObject>("Player/Character/Prefabs/CharacterSphere"), _player.transform) :

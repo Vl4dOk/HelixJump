@@ -17,7 +17,7 @@ public class Segment0 : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Character character))
         {
-            MenuManager.MainMenuManager.CallingMenu_VictoryScreen();
+            GlobalEventManager.Event_PlayerOnFinish?.Invoke();
             _audioSource.Play();
         }
     }

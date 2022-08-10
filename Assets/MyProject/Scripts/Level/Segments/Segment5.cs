@@ -14,7 +14,7 @@ public class Segment5 : MonoBehaviour
             Vector3 normal = -collision.contacts[0].normal.normalized;
             float dot = Vector3.Dot(normal, Vector3.up);
 
-            if (dot >= 0.5){ Character.Jump(2);}
+            if (dot >= 0.5){ Character.Jump(0.65f);}
         }
     }
 

@@ -16,7 +16,7 @@ namespace Players
 
 
 
-        public void Jump(int modSpeed = 1)
+        public void Jump(float modSpeed = 1)
         {
             if (!_isJump)
             {
@@ -32,7 +32,7 @@ namespace Players
             {               
                 GetComponent<MyCharacterController>()._isControlPlayer = false;
                 rb.isKinematic = true;
-                MenuManager.MainMenuManager.CallingMenu_DefeatScreen();
+                GlobalEventManager.Event_PlayerDied?.Invoke();
                 GetComponent<ShaderGraphContent1>()._isActive = true;
             }
 

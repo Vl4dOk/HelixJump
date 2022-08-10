@@ -11,7 +11,7 @@ public class Level : MonoBehaviour
     private LevelBuilder _levelBuilder;
 
 
-    // private byte _numberLevel;
+    // private byte NumberLevel;
 
 
     public void Construct(GameObject level, int numberLevel, bool isEndlessLevel)

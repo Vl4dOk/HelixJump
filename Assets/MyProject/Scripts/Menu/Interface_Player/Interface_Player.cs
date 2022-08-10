@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Interface_Player : MonoBehaviour
 {
-    [SerializeField] private GameObject _interface_Payer;
+    [SerializeField] private GameObject _interface_Player;
     private PlayerInventory _playerInventory;
     private LevelBuilder _levelBuilder;
 
@@ -16,19 +16,19 @@ public class Interface_Player : MonoBehaviour
     [SerializeField] private Text _recordTier;
     [SerializeField] private Text _scoreCoins;
 
+    private void Awake()
+    {
+        if (_interface_Player == null)
+        { _interface_Player = gameObject; }
+        GlobalEventManager.Event_StartGame += Activate_Interface_Payer;
+        GlobalEventManager.Event_FinishGame += Deactivate_Interface_Payer;
 
+        Deactivate_Interface_Payer();
+    }
 
     private void OnEnable()
     {
-
-
-
-        _playerInventory = FindObjectOfType<PlayerInventory>();
-
-        _levelBuilder = FindObjectOfType<LevelBuilder>();
-        _sliderProgress.maxValue = _levelBuilder._maxTier;
-
-       
+        UpdateInfo();
     }
 
     private void Update()
@@ -45,7 +45,16 @@ public class Interface_Player : MonoBehaviour
 
 
 
-    public void Calling_interface_Payer(){ _interface_Payer.SetActive(true);}
-    public void Close_interface_Payer()  { _interface_Payer.SetActive(false);}
+    public void Activate_Interface_Payer(){ _interface_Player.SetActive(true);}
+    public void Deactivate_Interface_Payer()  { _interface_Player.SetActive(false);}
 
+
+
+    public void UpdateInfo()
+    {
+        _playerInventory = FindObjectOfType<PlayerInventory>();
+
+        _levelBuilder = FindObjectOfType<LevelBuilder>();
+        _sliderProgress.maxValue = _levelBuilder._maxTier;
+    }
 }

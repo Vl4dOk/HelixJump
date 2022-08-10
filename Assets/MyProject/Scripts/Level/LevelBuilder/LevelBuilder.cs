@@ -34,14 +34,15 @@ public class LevelBuilder : MonoBehaviour
 
     public void Continue()
     {
+        _currentTier++;
+
         if (!_isEndlessLevel && _isLevelFinal)
             return;
 
-        if (_builtTiers <= _maxTier || _isEndlessLevel == true)
+        if (_builtTiers < _maxTier || _isEndlessLevel == true)
         { AddTier(); }
         else
         { AddFinishTier(); }
-        _currentTier++;
     }
 
     private void StartLevel()

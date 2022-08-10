@@ -11,8 +11,8 @@ namespace Players
         [SerializeField] private Material[] _CharacterSkins; //Matterial
 
 
-        private byte _numberCharacter;
-        private byte _numberCharacterSkin;
+        private int _numberCharacter;
+        private int _numberCharacterSkin;
        
 
         //private int _health;
@@ -21,7 +21,7 @@ namespace Players
         //private float _drag;
         //public float SensitivityPlayer;
 
-        public void Construct(GameObject character, byte characterNumber, byte numberCharacterSkin) 
+        public void Construct(GameObject character, int characterNumber, int numberCharacterSkin) 
         {
             _character = character;
             _numberCharacter = characterNumber;
