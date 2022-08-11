@@ -17,7 +17,9 @@ public class Segment0 : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Character character))
         {
+            character.GetComponent<Rigidbody>().isKinematic = true;
             GlobalEventManager.Event_PlayerOnFinish?.Invoke();
+            GetComponent<ParticleSystem>().Play();
             _audioSource.Play();
         }
     }

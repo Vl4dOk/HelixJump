@@ -21,9 +21,6 @@ public class Segment2 : MonoBehaviour
         { _audioSource = GetComponent<AudioSource>(); }
     }
 
-
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.TryGetComponent(out CharacterCharacteristics Character))
