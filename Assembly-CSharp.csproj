@@ -59,17 +59,22 @@
     <Compile Include="Assets\MyProject\Scripts\Player\Character\Character.cs" />
     <Compile Include="Assets\MyProject\Scripts\Menu\Menu_Shop\Menu_Shop_Skins.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment5.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_Main\Menu_Main.cs" />
+    <Compile Include="Assets\MyProject\Scripts\_Common\GlobalEventManager.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_Settings\Menu_Settings.cs" />
     <Compile Include="Assets\MyProject\Other\Shader\URP\Shaders\NewSceneTemplatePipeline.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Tiers\Tier.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Coins\Coins.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_DefeatScreen\Menu_DefeatScreen.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Level.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\Camera\CameraController.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment4.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\PlayerInventory.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\LevelBuilder\LevelBuilder.cs" />
     <Compile Include="Assets\MyProject\Scripts\Menu\Menu_Shop\Menu_Shop.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_VictoryScreen\Menu_VictoryScreen.cs" />
     <Compile Include="Assets\MyProject\Scripts\Menu\Interface_Player\Interface_Player.cs" />
-    <Compile Include="Assets\MyProject\Scripts\_Common\GameManager.cs" />
+    <Compile Include="Assets\MyProject\Scripts\_Common\GameStateManager.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment1.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Tiers\CylindersDestroy.cs" />
     <Compile Include="Assets\MyProject\Other\Shader\URP\Shaders\ShaderGraphContent1.cs" />
@@ -80,12 +85,8 @@
     <Compile Include="Assets\MyProject\Scripts\Player\Camera\CameraPlayer.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\Player.cs" />
     <Compile Include="Assets\MyProject\Scripts\Player\Character\CharacterCharacteristics.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment2.cs" />
-    <Compile Include="Assets\MyProject\Scripts\_Common\GlobalEventManager.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_VictoryScreen\Menu_VictoryScreen.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_DefeatScreen\Menu_DefeatScreen.cs" />
-    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_Main\Menu_Main.cs" />
     <Compile Include="Assets\MyProject\Scripts\Menu\Menu_Pause\Menu_Pause.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

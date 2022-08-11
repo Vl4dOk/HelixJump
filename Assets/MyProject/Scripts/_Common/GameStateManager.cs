@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Players
 {
-    public class GameManager : MonoBehaviour
+    public class GameStateManager : MonoBehaviour
     {
 
         private GameObject _game;

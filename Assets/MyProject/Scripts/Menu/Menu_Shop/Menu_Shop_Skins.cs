@@ -7,9 +7,14 @@ public class Menu_Shop_Skins : MonoBehaviour
 {
    
 
-    private Dictionary<string, byte> _openSkins;
+    private Dictionary<string, GameObject> _contentAll;
     [SerializeField] private GameObject[] _skinButtonBuy;
     [SerializeField] private Toggle[] _isToggleActive;
+
+    private void Awake()
+    {
+        
+    }
 
     private void Start()
     {
