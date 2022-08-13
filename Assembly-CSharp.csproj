@@ -75,6 +75,7 @@
     <Compile Include="Assets\MyProject\Scripts\Menu\Menu_VictoryScreen\Menu_VictoryScreen.cs" />
     <Compile Include="Assets\MyProject\Scripts\Menu\Interface_Player\Interface_Player.cs" />
     <Compile Include="Assets\MyProject\Scripts\_Common\GameStateManager.cs" />
+    <Compile Include="Assets\Resources\ParticleSystem\Menu\Menu_DefeatScreen\Words\ParticleSystemWordsController.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment1.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Tiers\CylindersDestroy.cs" />
     <Compile Include="Assets\MyProject\Other\Shader\URP\Shaders\ShaderGraphContent1.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Assets\MyProject\Scripts\Player\Character\CharacterCharacteristics.cs" />
     <Compile Include="Assets\MyProject\Scripts\Menu\Menu_Pause\Menu_Pause.cs" />
     <Compile Include="Assets\MyProject\Scripts\Level\Segments\Segment2.cs" />
-    <Compile Include="Assets\ParticleSystem\ParticleSystemWordsController.cs" />
+    <Compile Include="Assets\MyProject\Scripts\Menu\Menu_DefeatScreen\Particles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

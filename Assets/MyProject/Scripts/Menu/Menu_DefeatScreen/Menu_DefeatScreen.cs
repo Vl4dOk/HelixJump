@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Menu_DefeatScreen : MonoBehaviour
+namespace Menu.Menu_DefeatScreen
 {
-    [SerializeField] private GameObject _menu_DefeatScreen;
-
-    private void Awake()
+    public class Menu_DefeatScreen : MonoBehaviour
     {
-        if (_menu_DefeatScreen == null) { _menu_DefeatScreen = gameObject; }
+        [SerializeField] private GameObject _menu_DefeatScreen;
 
-        GlobalEventManager.Event_PlayerDied += Activate_Menu_Defeat;
+        private void Awake()
+        {
+            if (_menu_DefeatScreen == null) { _menu_DefeatScreen = gameObject; }
 
-        Deactivate_Menu_Defeat();
+            GlobalEventManager.Event_PlayerDied += Activate_Menu_Defeat;
+
+            Deactivate_Menu_Defeat();
+        }
+
+
+        public void Activate_Menu_Defeat() { _menu_DefeatScreen.SetActive(true); }
+        public void Deactivate_Menu_Defeat() { _menu_DefeatScreen.SetActive(false); }
+
     }
-
-
-    public void Activate_Menu_Defeat() { _menu_DefeatScreen.SetActive(true); }
-    public void Deactivate_Menu_Defeat() { _menu_DefeatScreen.SetActive(false); }
-
 }
